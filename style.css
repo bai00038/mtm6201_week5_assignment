@@ -1,0 +1,72 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 400px;
+}
+
+button {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-image: radial-gradient(ellipse at center, #ff0505 10%, #960910 85%, #960910 85%);
+    border: 0;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.8), 0 0 0 8px #D6D5DB, 0 0 0 18px #96989E;
+    border-radius: 50%;
+}
+
+/* css transform scale */
+@keyframes twinkle {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* css animation colorChange */
+@keyframes colorChange {
+    from {
+        background-image: radial-gradient(ellipse at center, #b9151e 10%, #960910 85%, #7a060c 85%);
+    }
+    to {
+        background-image: radial-gradient(ellipse at center, #ffe600 10%, #cfbf30 85%, #9b870b 85%);
+    }
+}
+
+/* css transform translate */
+@keyframes shake {
+    0%,
+    100% {
+        transform:translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform:translate(-10px,0);
+    }
+    20%, 40%, 60%, 80% {
+        transform:translate(10px,0);
+    }    
+}
+
+.doomsday {
+    animation-name: twinkle;
+    animation-duration: 1.1s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    animation-delay: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+/* css hover */
+.doomsday:hover {
+    animation: colorChange 0.5s ease-in-out infinite;
+}
+
+/* css active */
+.doomsday:active {
+    animation: shake 0.5s ease-in-out 4;
+}
